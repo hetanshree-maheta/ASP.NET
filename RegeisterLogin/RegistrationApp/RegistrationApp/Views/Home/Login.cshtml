@@ -1,0 +1,26 @@
+﻿@model RegistrationApp.Models.Register
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    <label for="unm" class="form-label">Username</label>
+    <br />
+
+    @Html.TextBox("Username");
+    @*@Html.TextBoxFor(m => m.Username)*@
+    <br />
+
+    <label for="pw" class="form-label">Password</label>
+    <br />
+
+    @Html.TextBox("Password",null, new { @type = "password" });
+    @*@Html.TextBoxFor(m => m.Password)*@
+    <br /><br />
+    <input type="submit" class="btn btn-primary" value="Login" />
+    <p>@ViewBag.Message</p>
+}

@@ -1,0 +1,43 @@
+﻿@model RegistrationApp.Models.Register
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<h3>Registration Form</h3>
+
+@using (Html.BeginForm("Register", "Home", FormMethod.Post))
+{
+    <label for="unm" class="form-label">Username</label>
+    <br />
+
+    @Html.TextBoxFor(m => m.Username)
+    <br/>
+    @TempData["Message"]
+    <br />
+
+    <label for="name" class="form-label">Name</label>
+    <br />
+
+    @Html.TextBoxFor(m => m.Name)
+    <br />
+
+    <label for="email" class="form-label">Email</label>
+    <br />
+    @Html.TextBoxFor(m => m.Email)
+    <br />
+
+    <label for="pw" class="form-label">Password</label>
+    <br />
+    @Html.TextBoxFor(m => m.Password, new { @type = "password" })
+    <br />
+
+    <br />
+
+    <input type="submit" class="btn btn-primary" value="Register" />
+
+
+    <p>Already User?@Html.ActionLink("Login Here", "Login", "Home")</p>
+
+}
